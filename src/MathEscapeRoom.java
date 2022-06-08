@@ -190,8 +190,8 @@ public class MathEscapeRoom extends javax.swing.JFrame {
             boolean cor;
             s+= e.getBase() + " ^ " + e.getExponent();
             q1.setText(String.valueOf(s));
-            double t = Double.parseDouble(ansbar1.getText());
-            if (t==e.getAnswer()){
+            int t = Integer.parseInt(ansbar1.getText());
+            if (e.equals(t)){
                 cor = true;
             }
             else {
@@ -282,6 +282,11 @@ public class Exponents{
         int ans = (int) (Math.pow(base,exponent));
         return ans;
     }
+    public boolean equals(int x){
+        if (x==getAnswer())
+            return true;
+           return false;
+    }
 }
 public class multiply{
     private int front;
@@ -302,5 +307,22 @@ public class multiply{
         int ans = front*back;
         return ans;
     }
+        public boolean equals(int x){
+        if (x==getAnswer())
+            return true;
+           return false;
+    }
+}
+public class Algebra{
+    private int coeff;
+    private int y;
+    
+    public Algebra(){
+        int x = (int)(Math.random()*15);
+      y = x;
+      int c = (int)(Math.random()*15);
+      coeff = c;
+    }
+    
 }
 }
