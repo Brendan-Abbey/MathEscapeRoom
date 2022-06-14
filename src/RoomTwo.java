@@ -10,6 +10,7 @@
  */
 public class RoomTwo extends javax.swing.JFrame {
     public static int i = 0;
+    public static boolean cor = true;
     /**
      * Creates new form RoomTwo
      */
@@ -141,15 +142,14 @@ public class RoomTwo extends javax.swing.JFrame {
  
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-       Key1.setText(String.valueOf(i));
-        if (i != 3) {
+        int b = i;
+        if (b != 3) {
             Exponents e = new Exponents();
             String s = "";
-            boolean cor;
             s += e.getBase() + " ^ " + e.getExponent();
             q1.setText(String.valueOf(s));
             int t = Integer.parseInt(ansbar1.getText());
-            if (e.equals(t)) {
+            if (!e.equals(t)) {
                 cor = true;
                 i++;
                 ansout.setText(String.valueOf("You got the last question correct!"));
@@ -157,6 +157,7 @@ public class RoomTwo extends javax.swing.JFrame {
                 cor = false;
                  ansout.setText(String.valueOf("You got the last question incorrect"));
             }
+            Key1.setText(String.valueOf(b));
            }
         else{
             Start ret = new Start();
@@ -227,7 +228,7 @@ public class RoomTwo extends javax.swing.JFrame {
     private int answer;
     
     public Exponents(){
-        int x = (int)(Math.random()*6);
+        int x = (int)(Math.random()*6)+1;
         exponent = x;
         int y = (int)(Math.random()*30)-15;
         base = y;
@@ -243,9 +244,12 @@ public class RoomTwo extends javax.swing.JFrame {
         return answer;
     }
     public boolean equals(int x){
-        if (x==getAnswer())
-            return true;
-           return false;
+        if (x==getAnswer()){
+            return true;}
+         
+        else{
+         return false;
+        }
     }
 }
 

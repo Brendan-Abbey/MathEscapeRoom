@@ -8,13 +8,13 @@
  *
  * @author brabb5577
  */
-public class Start extends javax.swing.JFrame {
+public class RoomThree extends javax.swing.JPanel {
 
-    /**
-     * Creates new form Start
-     */
     public static int i = 0;
-    public Start() {
+    /**
+     * Creates new form RoomThree
+     */
+    public RoomThree() {
         initComponents();
     }
 
@@ -27,6 +27,7 @@ public class Start extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        Key1 = new javax.swing.JLabel();
         sbm = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         q1 = new javax.swing.JLabel();
@@ -35,9 +36,6 @@ public class Start extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         ansout = new javax.swing.JLabel();
-        Key1 = new javax.swing.JLabel();
-
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         sbm.setText("Submit");
         sbm.addActionListener(new java.awt.event.ActionListener() {
@@ -47,7 +45,7 @@ public class Start extends javax.swing.JFrame {
         });
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jLabel1.setText("Room 2");
+        jLabel1.setText("Room 3");
 
         jLabel5.setText("Question");
 
@@ -61,8 +59,8 @@ public class Start extends javax.swing.JFrame {
 
         jLabel4.setText("Keys");
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
+        this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
@@ -121,18 +119,16 @@ public class Start extends javax.swing.JFrame {
                 .addComponent(sbm)
                 .addGap(30, 30, 30))
         );
-
-        pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void sbmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sbmActionPerformed
         // TODO add your handling code here:
         int b = i;
         if (b != 3) {
-            multiply e = new multiply();
+            Algebra e = new Algebra();
             String s = "";
             boolean cor;
-            s += e.getFirst() + " * " + e.getSecond();
+            s += e.getQuestion();
             q1.setText(String.valueOf(s));
             int t = Integer.parseInt(ansbar1.getText());
             if (!e.equals(t)) {
@@ -145,11 +141,6 @@ public class Start extends javax.swing.JFrame {
             }
             Key1.setText(String.valueOf(b));
         }
-        else{
-            RoomThree ett = new RoomThree();
-            ett.show();
-            dispose();
-        }
 
     }//GEN-LAST:event_sbmActionPerformed
 
@@ -157,40 +148,6 @@ public class Start extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_ansbar1ActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Start.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Start.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Start.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Start.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new Start().setVisible(true);
-            }
-        });
-    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Key1;
@@ -203,31 +160,56 @@ public class Start extends javax.swing.JFrame {
     private javax.swing.JLabel q1;
     private javax.swing.JButton sbm;
     // End of variables declaration//GEN-END:variables
-public class multiply{
-    private int front;
-    private int back;
-    public multiply(){
-      int x = (int)(Math.random()*15);
-      front = x;
-      int y = (int)(Math.random()*15);
-      back = y;
-    }
-    public int getFirst(){
-        return front;
-    }
-    public int getSecond(){
-        return back;
+public class Algebra{
+    private int question;
+    private String q;
+    private int answer;
+    
+    public Algebra(){
+      question = (int)(Math.random()*5)+1;
+      if (question==1)
+      {
+          String s = "19 = 4x+3";
+          answer = 4;
+          q = s;
+      }
+      else if (question == 2){
+          String a = "100 = 9x+10";
+          answer = 10;
+          q = a;
+      }
+      else if (question == 3){
+          String b = "12 = 6x-12";
+          answer = 4;
+          q = b;
+      }
+      else if (question == 4){
+          String c = "0 = x+10";
+          answer = -10;
+          q = c;
+      }
+      else if (question == 5){
+          String d = "29 = 2x+19";
+          answer = 5;
+          q = d;
+      }
+      else if (question == 6){
+          String e = "-13 = 6x-1";
+          answer = -2;
+          q = e;
+      }
     }
     public int getAnswer(){
-        int ans = front*back;
-        return ans;
+        return answer;
     }
-        public boolean equals(int x){
+    public String getQuestion(){
+        return q;
+    }
+            public boolean equals(int x){
         if (x==getAnswer())
             return true;
            return false;
     }
 }
-
 
 }
