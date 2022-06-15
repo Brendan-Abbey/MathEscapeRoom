@@ -158,13 +158,19 @@ public class RoomTwo extends javax.swing.JFrame {
             q1.setText(String.valueOf(s));
             int t = Integer.parseInt(ansbar1.getText());
             test.setText(String.valueOf(e.getAnswer()));
-            if (ans== t) {
-                cor = true;
-                i++;
-                ansout.setText(String.valueOf("You got the last question correct!"));
-            } else {
-                cor = false;
+            if (t<=0 || t>=0){
+                if (ans== t) {
+                    i++;
+                    ansout.setText(String.valueOf("You got the last question correct!"));
+                 } 
+                else {
                  ansout.setText(String.valueOf("You got the last question incorrect"));
+                 }
+            }
+            if (i == 3){
+            Start ret = new Start();
+            ret.show();
+            dispose();
             }
             Key1.setText(String.valueOf(i));
             ans = e.getAnswer();

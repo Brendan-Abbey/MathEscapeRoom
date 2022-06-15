@@ -14,6 +14,7 @@ public class Start extends javax.swing.JFrame {
      * Creates new form Start
      */
     public static int i = 0;
+    public static int ans;
     public Start() {
         initComponents();
     }
@@ -127,27 +128,32 @@ public class Start extends javax.swing.JFrame {
 
     private void sbmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sbmActionPerformed
         // TODO add your handling code here:
-        int b = i;
-        if (b != 3) {
+        if (i != 3) {
             multiply e = new multiply();
             String s = "";
             boolean cor;
             s += e.getFirst() + " * " + e.getSecond();
             q1.setText(String.valueOf(s));
             int t = Integer.parseInt(ansbar1.getText());
-            if (!e.equals(t)) {
-                cor = false;
-                ansout.setText(String.valueOf("You got the last question incorrect"));
-            } else {
+            if (ans == t) {
                 cor = true;
                 i++;
                 ansout.setText(String.valueOf("You got the last question correct!"));
+            } else {
+                cor = false;
+                 ansout.setText(String.valueOf("You got the last question incorrect"));
             }
-            Key1.setText(String.valueOf(b));
+            Key1.setText(String.valueOf(i));
+            ans = e.getAnswer();
+            if (i ==3){
+            RoomThree eee = new RoomThree();
+            eee.show();
+            dispose();
+            }
         }
         else{
-            RoomThree ett = new RoomThree();
-            ett.show();
+            RoomThree eee = new RoomThree();
+            eee.show();
             dispose();
         }
 

@@ -11,6 +11,7 @@
 public class RoomThree extends javax.swing.JPanel {
 
     public static int i = 0;
+    public static int ans;
     /**
      * Creates new form RoomThree
      */
@@ -123,15 +124,15 @@ public class RoomThree extends javax.swing.JPanel {
 
     private void sbmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sbmActionPerformed
         // TODO add your handling code here:
-        int b = i;
-        if (b != 3) {
+         Key1.setText(String.valueOf(i));
+        if (i != 3) {
             Algebra e = new Algebra();
             String s = "";
             boolean cor;
             s += e.getQuestion();
             q1.setText(String.valueOf(s));
             int t = Integer.parseInt(ansbar1.getText());
-            if (!e.equals(t)) {
+            if (ans == t) {
                 cor = false;
                 ansout.setText(String.valueOf("You got the last question incorrect"));
             } else {
@@ -139,8 +140,9 @@ public class RoomThree extends javax.swing.JPanel {
                 i++;
                 ansout.setText(String.valueOf("You got the last question correct!"));
             }
-            Key1.setText(String.valueOf(b));
+            ans = e.getAnswer();
         }
+       
 
     }//GEN-LAST:event_sbmActionPerformed
 
