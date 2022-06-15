@@ -245,7 +245,7 @@ public class RoomTwo extends javax.swing.JFrame {
     private int answer;
     
     public Exponents(){
-        int x = (int)(Math.random()*6)+1;
+        int x = (int)(Math.random()*3)+1;
         exponent = x;
         int y = (int)(Math.random()*30)-15;
         base = y;
