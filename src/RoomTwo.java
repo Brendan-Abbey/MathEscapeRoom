@@ -149,7 +149,7 @@ public class RoomTwo extends javax.swing.JFrame {
             s += e.getBase() + " ^ " + e.getExponent();
             q1.setText(String.valueOf(s));
             int t = Integer.parseInt(ansbar1.getText());
-            if (!e.equals(t)) {
+            if (e.getAnswer()== t) {
                 cor = true;
                 i++;
                 ansout.setText(String.valueOf("You got the last question correct!"));
@@ -240,30 +240,16 @@ public class RoomTwo extends javax.swing.JFrame {
         return exponent;
     }
     public int getAnswer(){
-        int answer = (int) (Math.pow(base,exponent));
+        double an = Math.pow(base,exponent);
+        answer = (int)(an);
         return answer;
     }
     public boolean equals(int x){
-        if (x==getAnswer()){
-            return true;}
-         
-        else{
+        if (x==getAnswer())
+            return true;
          return false;
-        }
+        
     }
 }
 
-public class count {
-    private int nowcount;
-    public count(){
-        nowcount = 0;
-    }
-    public void addCount(){
-        nowcount+=1;
-    }
-    public int getCount(){
-        return nowcount;
-    }
-    
-}
 }
