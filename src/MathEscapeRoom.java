@@ -110,7 +110,7 @@ public class MathEscapeRoom extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        RoomTwo tre = new RoomTwo();
+        RoomOne tre = new RoomOne();
         tre.show();
         dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
