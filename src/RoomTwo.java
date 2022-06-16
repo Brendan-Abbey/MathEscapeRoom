@@ -11,7 +11,7 @@
 public class RoomTwo extends javax.swing.JFrame {
     public static int i = 0;
     public static boolean cor = true;
-    public static int ans;
+    public static int ans = 0;
     /**
      * Creates new form RoomTwo
      */
@@ -158,7 +158,7 @@ public class RoomTwo extends javax.swing.JFrame {
             q1.setText(String.valueOf(s));
             int t = Integer.parseInt(ansbar1.getText());
             test.setText(String.valueOf(e.getAnswer()));
-            if (t<=0 || t>=0){
+            if (ans!=0){
                 if (ans== t) {
                     i++;
                     ansout.setText(String.valueOf("You got the last question correct!"));
