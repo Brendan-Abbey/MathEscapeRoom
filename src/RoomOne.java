@@ -53,6 +53,7 @@ public class RoomOne extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel1.setText("Room 1");
 
+        ansbar1.setText("0");
         ansbar1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ansbar1ActionPerformed(evt);
