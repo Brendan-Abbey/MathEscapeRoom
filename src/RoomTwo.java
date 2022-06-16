@@ -237,9 +237,9 @@ public class multiply{
     private int front;
     private int back;
     public multiply(){
-      int x = (int)(Math.random()*15);
+      int x = (int)(Math.random()*14)+1;
       front = x;
-      int y = (int)(Math.random()*15);
+      int y = (int)(Math.random()*14)+1;
       back = y;
     }
     public int getFirst(){
