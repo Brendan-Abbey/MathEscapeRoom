@@ -185,9 +185,10 @@ public class RoomOne extends javax.swing.JFrame {
                  }
             }
             if (i == 3){
-            RoomTwo ret = new RoomTwo();
-            ret.show();
-            dispose();
+                //go to new room if player has correct amount of keys
+                RoomTwo ret = new RoomTwo();
+                ret.show();
+                dispose();
             }
             Key1.setText(String.valueOf(i));
             ans = e.getAnswer();
