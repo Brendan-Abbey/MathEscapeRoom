@@ -1,7 +1,7 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * Brendan Abbey
+ * June 16th 2022
+ * Math Escape Room
  */
 
 /**
@@ -168,10 +168,12 @@ public class RoomThree extends javax.swing.JFrame {
         // TODO add your handling code here:
         //number of keys is not 3 start question asking process
         if (i != 3) {
+            //create new question
             Algebra e = new Algebra();
             String s = "";
             s += e.getQuestion();
             q1.setText(String.valueOf(s));
+            //checks if users answer for last question is correct
             int t = Integer.parseInt(ansbar1.getText());
             if (ans != 0){
                 if (ans == t) {
@@ -182,7 +184,9 @@ public class RoomThree extends javax.swing.JFrame {
                     ansout.setText(String.valueOf("You got the last question incorrect!"));
                 }
             }
+            //outputs number of keys
             Key1.setText(String.valueOf(i));
+            //stores answer to new question
             ans = e.getAnswer();
             if (i == 3){
                 Finish tre = new Finish();
@@ -285,10 +289,12 @@ public class Algebra{
           String e = "-13 = 6x-1";
           answer = -2;
           q = e;
+      //sets a question and answer
       }
     }
     public int getAnswer(){
         return answer;
+        //returns answer
     }
     public String getQuestion(){
         return q;
@@ -297,6 +303,7 @@ public class Algebra{
         if (x==getAnswer())
             return true;
            return false;
+           //returns weather an integer is equal to the answer
     }
 }
 }

@@ -1,7 +1,7 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * Brendan Abbey
+ * June 16th 2022
+ * Math Escape Room
  */
 
 /**

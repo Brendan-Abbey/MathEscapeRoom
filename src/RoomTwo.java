@@ -1,7 +1,7 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * Brendan Abbey
+ * June 16th 2022
+ * Math Escape Room
  */
 
 /**
@@ -150,10 +150,12 @@ public class RoomTwo extends javax.swing.JFrame {
         // TODO add your handling code here:
         //number of keys is not 3 start question asking process
         if (i != 3) {
+            //creates new question
             multiply e = new multiply();
             String s = "";
             s += e.getFirst() + " * " + e.getSecond();
             q1.setText(String.valueOf(s));
+            //checks if users answer to last question is correct
             int t = Integer.parseInt(ansbar1.getText());
             if (ans!=0){
                 if (ans == t) {
@@ -165,8 +167,10 @@ public class RoomTwo extends javax.swing.JFrame {
                 }
             }
             Key1.setText(String.valueOf(i));
+            //stores answer to new question
             ans = e.getAnswer();
             if (i ==3){
+            //changes rooms if user has 3 keys
             RoomThree eee = new RoomThree();
             eee.show();
             dispose();
@@ -241,21 +245,26 @@ public class multiply{
       front = x;
       int y = (int)(Math.random()*14)+1;
       back = y;
+      //creates random numbers to be multiplied
     }
     public int getFirst(){
         return front;
+        //returns a front number
     }
     public int getSecond(){
         return back;
+        //returns a back number
     }
     public int getAnswer(){
         int ans = front*back;
         return ans;
+        //return number for front*back
     }
         public boolean equals(int x){
         if (x==getAnswer())
             return true;
            return false;
+        //returns if an integer is equal to the answer
     }
 }
 

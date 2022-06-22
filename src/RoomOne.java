@@ -169,10 +169,12 @@ public class RoomOne extends javax.swing.JFrame {
         // TODO add your handling code here:
         //number of keys is not 3 start question asking process
         if (i != 3) {
+            //creates a new question
             Exponents e = new Exponents();
             String s = "";
             s += e.getBase() + " ^ " + e.getExponent();
             q1.setText(String.valueOf(s));
+            //checks if user input is correct for last question
             int t = Integer.parseInt(ansbar1.getText());
             //test.setText(String.valueOf(e.getAnswer()));
             if (ans!=0){
@@ -191,6 +193,7 @@ public class RoomOne extends javax.swing.JFrame {
                 dispose();
             }
             Key1.setText(String.valueOf(i));
+            //stores answer to new question
             ans = e.getAnswer();
            }
         else{
@@ -270,23 +273,27 @@ public class RoomOne extends javax.swing.JFrame {
         exponent = x;
         int y = (int)(Math.random()*30)-15;
         base = y;
+        //creates an exponent and a base for a question
     }
     public int getBase(){
         return base;
+        //returns base
     }
     public int getExponent(){
         return exponent;
+        //returns exponent
     }
     public int getAnswer(){
         double an = Math.pow(base,exponent);
         answer = (int)(an);
         return answer;
+        //gives answer to base^exponent
     }
     public boolean equals(int x){
         if (x==getAnswer())
             return true;
          return false;
-        
+        //checks if an int is equal to the answer
     }
 }
 
